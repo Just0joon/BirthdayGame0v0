@@ -340,6 +340,8 @@ let achievements = {
 	},
 }
 
+console.log('updated :D')
+
 $(document).ready(() => {
 	let winsCounter = +localStorage.getItem('winsCounter1235')
 	let defeatsCounter = +localStorage.getItem('defeatsCounter1235')
