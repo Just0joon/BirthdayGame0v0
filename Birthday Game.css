@@ -9,7 +9,6 @@
     padding: 0;
     box-sizing: border-box;
     }
-
 body {
     position: absolute;
     background: #222222;
@@ -713,7 +712,7 @@ b.statsText {
 #heading {
     color: #ffffff44;
     position: absolute;
-    top: -10px;
+    top: 10px;
     left: 10px;
     font-size: 18px;
 }
@@ -1137,7 +1136,6 @@ b.statsText {
     #heading {
         width: 100vw;
         left: 0;
-        top: -15px;
     }
 
     #charactersSkins {
