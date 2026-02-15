@@ -213,6 +213,18 @@ b.statsText {
     gap: 5px;
 }
 
+#selectedModifiers::-webkit-scrollbar {
+    background-color: #222; 
+}
+
+#selectedModifiers::-webkit-scrollbar-thumb {
+    background-color: #303030;
+}
+
+#selectedModifiers::-webkit-scrollbar-thumb:active {
+    background-color: #333;
+}
+
 .selectedModifier {
     position: relative;
     top: 12px;
@@ -395,7 +407,7 @@ b.statsText {
     bottom: 0;
     overflow: hidden;
     width: 100vw;
-    place-items: center;
+    justify-content: center;
     margin: 0;
 }
 
@@ -520,6 +532,9 @@ b.statsText {
 }
 
 #gameModeBox {
+    position: absolute;
+    top: 10vh;
+    left: calc(50vw - 200px);
     display: grid;
     grid-template-columns: 150px;
     grid-template-rows: repeat(2, 75px) 250px;
@@ -559,8 +574,9 @@ b.statsText {
 #start {
     display: block;
     position: absolute;
-    width: 180px;
-    height: auto;
+    width: auto;
+    height: 12vh;
+    left: calc(50vw - 12vh);
     bottom: 20px;
     transition: 
         transform ease-in-out 100ms,
@@ -575,8 +591,8 @@ b.statsText {
 #characters {
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(2, 140px);
-    grid-template-rows: repeat(2, 206.66px);
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, 31.7vh);
     gap: 20px;
     place-content: center;
 }
@@ -900,6 +916,9 @@ b.statsText {
 
     #startGame {
         z-index: 7;
+        height: 12dvh;
+        width: auto;
+        bottom: 1.5dvh;
     }
 
     #modifiersInfo {
@@ -1077,8 +1096,8 @@ b.statsText {
     }
 
     #characters {
-        grid-template-columns: repeat(2, 80px);
-        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, 18.1vh);
         top: 0;
         width: 100vw;
         height: 50dvh;
@@ -1281,17 +1300,9 @@ b.statsText {
     }
 
     #gameModeBox {
-        display: grid;
-        grid-template-columns: 90px;
-        grid-template-rows: repeat(2, 45px) 150px;
-        place-content: center;
-        background: linear-gradient(45deg, #66573344, #66336177);
-        width: 240px;
-        height: 300px;
-        border-radius: 16px;
-        gap: 20px;
-        margin: auto;
-        gap: 0px
+        width: 250px;
+        left: calc(50vw - 125px);
+        height: 470px;
     }
 
     #gameModeInfo {
@@ -1299,9 +1310,9 @@ b.statsText {
         place-content: center;
         position: relative;
         background: linear-gradient(45deg, #665733, #663361);
-        width: 150px;
+        width: 200px;
         height: 120px;
-        top: 30px;
+        top: 60px;
         left: -30px;
         border-radius: 8px;
         font-size: 14px;
