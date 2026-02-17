@@ -106,7 +106,7 @@ b.statsText {
 
 .ranksScore {
     position: fixed;
-    right: 35vw;
+    right: 36vw;
 }
 
 .rank {
@@ -115,6 +115,8 @@ b.statsText {
 
 
 .finalButtons {
+    width: 28vw;
+    position: relative;
     display: grid;
     opacity: 0;
     background-color: #444444;
@@ -738,8 +740,8 @@ b.statsText {
     place-content: center;
     position: absolute;
     background: #444444;
-    width: 300px;
-    height: 300px;
+    width: 40dvh;
+    height: 40dvh;
     border-radius: 16px;
 }
 
@@ -1006,14 +1008,14 @@ b.statsText {
     }
     
     .ranksScore {
-        position: static;
-        right: auto;
+        position: relative;
+        right: 15px;
     }
 
     .finalButtons {
         font-size: 17.76px;
         min-height: 36.88px;
-        width: 370.2px;
+        width: 341.6px;
     }
 
     #ritualImg {
@@ -1472,14 +1474,14 @@ b.statsText {
     }
     
     .ranksScore {
-        position: static;
-        right: auto;
+        position: relative;
+        right: 15px;
     }
 
     .finalButtons {
         font-size: 14.208px;
         min-height: 29.504px;
-        width: 292.8px;
+        width: 260px;
     }
 } 
 
