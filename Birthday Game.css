@@ -1255,6 +1255,7 @@ b.statsText {
     .characterCell {
         width: 130px;
         height: 130px;
+        top: 28dvh;
     }
 
     .characterImg {
@@ -1481,6 +1482,10 @@ b.statsText {
         font-size: 14.208px;
         min-height: 29.504px;
         width: 260px;
+    }
+
+    .characterCell {
+        top: 25dvh;
     }
 } 
 
