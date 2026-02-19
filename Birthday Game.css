@@ -1537,7 +1537,7 @@ b.statsText {
     }
 
     .exit {
-        top: 20px;
+        top: 10px;
         left: 20px;
         font-size: 28px;
         background-color: #303030;
