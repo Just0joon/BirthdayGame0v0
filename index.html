@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Birthday Game.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+    <script src="Birthday Game.js"></script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy birthday!!</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <div id="statsMenu"></div>
+
+    <div id="ranksBox">
+        <div id="ranks">
+            <p id="win"></p>
+            <div id="rank1" class="rank"></div>
+            <div id="rank2" class="rank"></div>
+            <div id="rank3" class="rank"></div>
+            <p id="score">S</p>
+            <div class="finalButtons" id="returnToMenu">В главное меню</div><br>
+            <div class="finalButtons" id="restart">Заново</div>
+        </div>
+    </div>
+    <div id="lookAchievementsGrid"></div>
+
+    <div id="startMenu">
+        <img id="reset" src="Imgs/Reset.png"></img>
+        <div id="startBox">
+            <img src="Imgs/Play.png" alt="play" class="img classicButton lazyload" id="play">
+            <img src="Imgs/Stats.png" alt="stats" id="stats" class="classicButton lazyload">
+            <img src="Imgs/Achievements.png" alt="achievements" id="achievements" class="classicButton lazyload">
+        </div>
+    </div>
+
+    <div id="gameModeMenu">
+        <div id="gameModeBox">
+            <img src="Imgs/PvE.png" alt="PvE" id="PvE" class="classicButton lazyload">
+            <img src="Imgs/PvP.png" alt="PvP" id="PvP" class="classicButton lazyload">
+            <div id="gameModeInfo"></div>
+        </div>
+        <img src="Imgs/Start.png" alt="start" id="start" class="lazyload">
+    </div>
+
+    <div id="selectCharacterMenu">
+        <div id="characters">
+            <img src="Cards/Shelly card.png" alt="" class="character lazyload" id="shelly" data-model="Characters and Skins/Shelly.png">
+            <img src="Cards/Kikimama card.png" alt="" class="character lazyload" id="kikimama" data-model="Characters and Skins/kikimama.png">
+            <img src="Cards/Pumpkin card.png" alt="" class="character lazyload" id="pumpkin" data-model="Characters and Skins/Pumpkin.png">
+            <img src="Cards/Joker card.png" alt="" class="character lazyload" id="joker" data-model="Characters and Skins/Joker.png">
+            <p id="heading">Выбери своего персонажа</p>
+        </div>
+        <div id="charactersMenu">
+            <div id="charactersButtons">
+                <div id="charactersInfoButton" class="button"><p>character</p></div>
+                <div id="skinsButton" class="button"><p>skins</p></div>
+            </div>
+            <div id="charactersInfo"></div>
+            <div id="charactersSkins"></div>
+        </div>
+    </div>
+
+    <div id="selectModifiersMenu">
+        <div id="modifiersGrid">
+            <img class="modifier" id="modifierRandom" src="Modifeirs/Random.png" data-name="Случайные" data-id="random">
+            <img class="modifier" id="modifierCheerfulness" src="Modifeirs/Cheerfulness.png" data-name="Бодрость" data-id="cheerfulness">
+            <img class="modifier" id="modifierFire" src="Modifeirs/Fire.png" data-name="Пожар" data-id="fire">
+            <img class="modifier" id="modifierTwoLives" src="Modifeirs/2 lives.png" data-name="2 жизни" data-id="twoLives">
+            <img class="modifier" id="modifierDoublePunch" src="Modifeirs/Double punch.png" data-name="Двойной удар" data-id="doublePunch">
+            <img class="modifier" id="modifierFatigue" src="Modifeirs/Fatigue.png" data-name="Усталость" data-id="fatigue">
+            <img class="modifier" id="modifierHeal" src="Modifeirs/heal.png" data-name="Исцеление" data-id="heal">
+            <img class="modifier" id="modifierRitual" src="Modifeirs/Ritual.png" data-name="Ритуал" data-id="ritual">
+            <img class="modifier" id="modifierWithoutBorders" src="Modifeirs/Without borders.png" data-name="Без границ" data-id="withoutBorders">
+        </div>
+        <div id="modifiersInfo">
+            <h1 id="modifierName">Модификатор</h1>
+            <p id="modifierText"></p>
+            <img class="add" src="Imgs/Add.png">
+        </div>
+        <div id="selectedModifiers"></div>
+        <img src="Imgs/Start.png" id="startGame">
+    </div>
+
+    <div id="scene">
+        <div id="visualEffects"></div>
+        <p id="selectedAttack">selectedAttack</p>
+        <img src="Imgs/Use.png" id="useButton">
+        <p id="turn">Твой ход</p>
+        <div id="yourCharacter" class="characterCell">
+            <img src="Characters and Skins/void.png" alt="you" class="characterImg" id="yourCharacterImg">
+        </div>
+        <div id="effectsGridPlayer" class="effectsGrid">
+            <img class="steps" id="effect1-steps" src="Effects/1 step.png">
+            <img class="effect" id="effect1" src="Effects/burning 1.png">
+            <img class="steps" id="effect2-steps" src="Effects/1 step.png">
+            <img class="effect" id="effect2" src="Effects/burning 1.png">
+            <img class="steps" id="effect3-steps" src="Effects/1 step.png">
+            <img class="effect" id="effect3" src="Effects/burning 1.png">
+        </div>
+        <div id="enemyCharacter" class="characterCell">
+            <img src="Characters and Skins/void.png" alt="enemy" class="characterImg" id="enemyCharacterImg">
+        </div>
+        <div id="effectsGridEnemy" class="effectsGrid">
+            <img class="steps" id="enemyEffect1-steps" src="Effects/1 step.png">
+            <img class="effect" id="enemyEffect1" src="Effects/burning 1.png">
+            <img class="steps" id="enemyEffect2-steps" src="Effects/1 step.png">
+            <img class="effect" id="enemyEffect2" src="Effects/burning 1.png">
+            <img class="steps" id="enemyEffect3-steps" src="Effects/1 step.png">
+            <img class="effect" id="enemyEffect3" src="Effects/burning 1.png">
+        </div>
+
+        <img id="ritualImg" src="Abilities/Ritual.png">
+        <div id="attackCards">
+            <img src="Cards/Void card.png" alt="Void" class="characterAttackCard attacks" id="attack1">
+            <img src="Cards/Void card.png" alt="Void" class="characterAttackCard attacks" id="attack2">
+            <img src="Cards/Void card.png" alt="Void" class="characterAttackCard attacks" id="attack3">
+            <img src="Abilities/abilityVoid.png" alt="ability" class="characterAbilityCard attacks" id="ability">
+        </div>
+
+        <div id="yourCounters" class="allCounters">
+            <div class="counterBox" id="boxCounter1">
+                <p class="counter" id="yourArmor">Броня: 0</p>
+                <img src="Imgs/Armor Icon.png" alt="Броня" class="counterImg">
+            </div>
+            <div class="counterBox" id="boxCounter2">
+                <p class="counter" id="yourMana">Мана: 0</p>
+                <img src="Imgs/Mana Icon.png" alt="Мана" class="counterImg">
+            </div>
+            <div class="counterBox" id="boxCounter3">
+                <p class="counter" id="yourHp">ОЗ: 0</p>
+                <img src="Imgs/HP Icon.png" alt="ОЗ" class="counterImg">
+            </div>
+        </div>
+
+        <div id="enemyCounters" class="allCounters">
+            <div class="counterBox" id="enemyBoxCounter1">
+                <p class="counter" id="enemyArmor">Броня: 100</p>
+                <img src="Imgs/Armor Icon.png" alt="Броня" class="counterImg">
+            </div>
+            <div class="counterBox" id="enemyBoxCounter2">
+                <p class="counter" id="enemyMana">Мана: 100</p>
+                <img src="Imgs/Mana Icon.png" alt="Мана" class="counterImg">
+            </div>
+            <div class="counterBox" id="enemyBoxCounter3">
+                <p class="counter" id="enemyHp">ОЗ: 100</p>
+                <img src="Imgs/HP Icon.png" alt="ОЗ" class="counterImg">
+            </div>
+        </div>
+        <div id="attackInfo"></div>
+    </div>
+
+    <div id="achievementsMenu">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="happyBirthday">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="timeParadox">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="firstWin">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="kikimamaHasGoneTooFar">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="KIKIMAMA">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="glitchMeeting">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="howDareYou">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="pacifist">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="lastBreath">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="pyromaniac">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="invincible">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="rebirth">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="iAmMyOwnDoctor">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="master">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="exorcist">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="speed">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="adhd">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="perfect">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="marathon">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="collector">
+        <img src="Achievements/Achievement.png" alt="achievement" class="achievement lazyload" id="loser">
+        <p class="exit">&lt;</p>
+        <div id="achievementsInfo"></div>
+    </div>
+</body>
+</html>
